@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Лабораторная работа №1</title>
+</head>
+<body>
+	<div align="center">
+		<b>Вычисление приведённой функции</b>
+		<div>
+			<img src="C:\Users\flami\OneDrive\GAPOU PO PKIPT\Проектирование и разработка\Лабораторные\Лабораторная работа №1\Формула.jpg" width="500px" height="80px">
+		</div>
+		<form name="form" action="javascript:count()">
+			n
+			<input type="text" name="n_input" value="0" size="5">
+			x
+			<input type="text" name="x_input" value="0" size="5">
+			<input type="submit" name="count" value="Посчитать">
+		</form>
+		<div id="result">
+			Решение:
+		</div>
+	</div>
+	<script language="javascript">
+		function count(){
+			var n = document.form.n_input.value;
+			var x = document.form.x_input.value;
+			var reshenie = document.getElementById('result');
+			var result = 0;
+
+			for (var i = 0; i <= n; i++) {
+				var math_1 = Math.pow((-1),i) * Math.pow(x,2*i+1)/(2*i+1);
+				var result = result+math_1;
+			}
+
+			if (result >= 0 || result <=0) {
+				reshenie.innerHTML = `Решение: arctg x =${result}`;
+				
+			}
+			else{
+				alert("Введите верное значение");
+			}
+		}
+	</script>
+</body>
+</html>
